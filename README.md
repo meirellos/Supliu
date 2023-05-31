@@ -1,11 +1,11 @@
 Projeto teste para a empresa Supliu.
 
 Tecnologias utilizadas: 
-PHP 8.0.28
-Laravel 9.5.2
-MySQL
-HTML5 + CSS
-Bootstrap
+PHP 8.0.28 <br/>
+Laravel 9.5.2 <br/>
+MySQL <br/>
+HTML5 + CSS <br/>
+Bootstrap <br/>
 
 
 Utilizado blade para criação das pages, controllers, models, validations e migrations.
