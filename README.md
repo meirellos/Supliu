@@ -26,4 +26,9 @@ Na aba de login, temos a opção de fazer login, ou criar uma conta:
 Após o login, temos o acesso liberado para a página de edição, onde podemos adicionar albums, adicionar faixas em albums e excluir os mesmos:
 ![image](https://github.com/meirellos/Supliu/assets/72823459/034d5fdf-e034-437a-a0cd-497988e99f7c)
 
+Tabelas do banco:
+![image](https://github.com/meirellos/Supliu/assets/72823459/c4961f0b-8fe2-49c7-af97-fdbb68b41edd)
+![image](https://github.com/meirellos/Supliu/assets/72823459/2eeed57c-d30a-4eef-abaa-b4144a36526f)
+![image](https://github.com/meirellos/Supliu/assets/72823459/7b5e6a26-5600-473c-8d27-f7dddacb0cff)
+
 Agradeço a oportunidade e fico disponivel no caso de dúvidas!!
