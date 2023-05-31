@@ -1,6 +1,6 @@
 Projeto teste para a empresa Supliu.
 
-Tecnologias utilizadas: 
+Tecnologias utilizadas: <br/>
 PHP 8.0.28 <br/>
 Laravel 9.5.2 <br/>
 MySQL <br/>
