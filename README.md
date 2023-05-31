@@ -7,7 +7,7 @@ MySQL <br/>
 HTML5 + CSS <br/>
 Bootstrap <br/>
 Utilizado Modelo MVC (Model - View - Controller)
-Utilizado blade para criação das pages, validations e migrations.
+Utilizado blade para criação das pages, validations e migrations. <br/>
 
 Para acessar a lista de albums, na primeira página selecione a opção: Acessar Painel.
 ![image](https://github.com/meirellos/Supliu/assets/72823459/5a70b970-8ae4-4504-9049-01950e3fc846)
