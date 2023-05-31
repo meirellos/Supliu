@@ -52,7 +52,7 @@ class TrackController extends Controller
     $album->tracks()->save($track);
 
     // Redirecionar ou retornar uma resposta de sucesso
-    return redirect()->route('tracks')->with('success', 'Faixa adicionada ao álbum com sucesso!');
+    return redirect()->route('albums.edit');
     }
 
 
@@ -78,6 +78,6 @@ class TrackController extends Controller
         $track = Track::findOrFail($id);
         $track->delete();
 
-        return redirect()->route('albums')->with('success', 'Album excluido com sucesso!');
+        return redirect()->route('albums.edit');
     }
 }

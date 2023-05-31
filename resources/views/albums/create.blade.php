@@ -20,14 +20,21 @@
     <div class="container">
         <div class="box">
             <div class="content">
+                <div class="text-center"><h1>Criar novo album</h1></div>
+                <div class="box-form">
                 <form action="{{ route('albums.store') }}" method="POST">
                     @csrf
                     <input type="text" name="image" placeholder="Imagem do álbum">
-                    <input type="text" name="name" placeholder="Nome do álbum">
-                    <input type="text" name="date" placeholder="Data do álbum">
 
-                    <button type="submit">Adicionar álbum</button>
+                    <input type="text" name="name" placeholder="Nome do álbum*" >
+
+                    <input type="text" name="date" placeholder="Data do álbum*" >
+
+                    <button type="submit" class="btn">Adicionar álbum</button>
                 </form>
+
+                <a href="{{ route('albums') }}" class="ref-albums">Voltar</a>
+            </div>
             </div>
         </div>
     </div>

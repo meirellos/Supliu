@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\TrackController;
 
@@ -19,6 +20,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Criação de grupo de controllers para autenticação
+Route::controller(AuthController::class)->group(function(){
+
+    //Rotas de Registro
+    Route::get('register', 'register')->name('register');
+    Route::post('register', 'registerSave')->name('register.save');
+
+    //Rotas de Login
+    Route::get('login', 'login')->name('login');
+    Route::post('login', 'loginAction')->name('login.action');
+
+    //Rota de Logout
+    Route::get('logout', 'logout')->middleware('auth')->name('logout');
+
+});
+
+Route::middleware('auth')->group(function(){
+    Route::get('albums', function(){
+        return view('albums');
+    })->name('albums');});
+
 
 Route::controller(AlbumController::class)->prefix('albums')->group(function () {
 
@@ -33,6 +55,9 @@ Route::controller(AlbumController::class)->prefix('albums')->group(function () {
 
     //Salvando o Album
     Route::post('store', 'store')->name('albums.store');
+
+    //Editando um Album
+    Route::get('edit', 'edit')->name('albums.edit');
 
     //Deletando um Album
     Route::delete('destroy/{id}', 'destroy')->name('albums.destroy');

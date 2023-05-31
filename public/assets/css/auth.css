@@ -1,0 +1,139 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    text-decoration: none!important;
+}
+html {
+    min-height: 100%;
+}
+
+body {
+    background: url("/assets/img/background-auth.jpg") center center no-repeat fixed;
+    background-size: cover;
+}
+
+.box{
+    margin-top: 20px;
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2e2f33;
+}
+.box a{
+    text-decoration: none!important;
+    color: #fff;
+}
+
+.box-content {
+    height: 640px;
+    padding: 40px;
+    border-radius: 0 0 6px 6px;
+}
+
+.box-content p{
+    color: #fff;
+    font-size: 20px;
+    border-bottom: 2px solid #ff02d9;
+    max-width: 120px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+.logo-supliu img{
+    margin-top: -20px;
+    max-width: 125px;
+}
+
+a.logo-supliu{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.box-form{
+    margin-top: 10px;
+}
+
+.box-form input{
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.box-form button{
+    background: rgb(219,41,122);
+    background: linear-gradient(5deg, rgb(173, 29, 94) 0%, rgb(79, 16, 151) 100%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px;
+    padding-inline: 55px;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 40px;
+}
+
+a.ref-login{
+    position: relative;
+    top: 30px;
+    color: #8e8e8e;
+}
+
+a.ref-register{
+    position: relative;
+    top: 30px;
+    color: #8e8e8e;
+}
+
+a.ref-albums{
+    position: relative;
+    top: 45px;
+    color: #8e8e8e;
+
+}
+
+a.ref-login:hover{
+    color: #fff;
+}
+
+a.ref-register:hover{
+    color: #fff;
+}
+
+a.ref-albums:hover{
+    color: #fff;
+}
+
+.custom-control-label{
+    color: #fff;
+}
+
+@media (max-width:768px){
+    .box{
+        width: 90%!important;
+    }
+
+    .box-content{
+        height: 660px;
+    }
+
+    .box-form button{
+        padding-inline: 80px;
+    }
+
+    a.ref-register{
+        position: relative;
+        top: 40px;
+    }
+
+    a.ref-albums{
+        position: relative;
+        top: 75px;
+    }
+}

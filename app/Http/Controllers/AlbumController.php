@@ -73,7 +73,7 @@ class AlbumController extends Controller
         //Salvando o album no bd
         $album->save();
 
-        return redirect()->route('albums')->with('success', 'Album adicionado com sucesso!');
+        return redirect()->route('albums.edit')->with('success', 'Album adicionado com sucesso!');
     }
 
     /**
@@ -94,9 +94,11 @@ class AlbumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         //
+        $albums = Album::with('tracks')->get();
+        return view('albums.edit', compact('albums'));
     }
 
     /**
@@ -130,6 +132,6 @@ class AlbumController extends Controller
         $album->tracks()->delete();
         $album->delete();
 
-        return redirect()->route('albums')->with('success', 'Album excluido com sucesso!');
+        return redirect()->route('albums.edit')->with('success', 'Album excluido com sucesso!');
     }
 }

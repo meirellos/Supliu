@@ -17,10 +17,12 @@
 </head>
 
 <body>
+
+
     <div class="container">
         <div class="box">
             <div class="box-title">
-                <a href="{{ route('albums')}}"> <img src="{{ asset('assets/img/logo.png') }}" alt="Logo Tiao"></a>
+                <a href="{{ route('albums') }}"> <img src="{{ asset('assets/img/logo.png') }}" alt="Logo Tiao"></a>
                 <h1>Discografia</h1>
             </div>
             <div class="content">
@@ -49,16 +51,16 @@
                             </form>  -->
 
                         <div class="album-content">
-                            
-                                <table>
-                                    <thead>
-                                        <tr class="">
-                                            <th class="trackNumber">Nº</th>
-                                            <th class="trackName">Faixa</th>
-                                            <th class="trackDuration">Duração</th>
-                                        </tr>
-                                    </thead>
-                                    @foreach ($album->tracks as $track)
+
+                            <table>
+                                <thead>
+                                    <tr class="">
+                                        <th class="trackNumber">Nº</th>
+                                        <th class="trackName">Faixa</th>
+                                        <th class="trackDuration">Duração</th>
+                                    </tr>
+                                </thead>
+                                @foreach ($album->tracks as $track)
                                     <tbody>
                                         <tr>
                                             <td> {{ $track->id }}</td>
@@ -67,24 +69,27 @@
 
                                         </tr>
                                     </tbody>
-                                    @endforeach
-                                </table>
+                                @endforeach
+                            </table>
 
 
-                                <!--  <form action="{{ route('tracks.destroy', $track->id) }}" method="POST">
+                            <!--  <form action="{{ route('tracks.destroy', $track->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit">Excluir</button>
                                     </form> -->
-                           
+
                         </div>
                     @endforeach
                 </div>
+                <div class="login-index">
+                    <a href="{{ route('login') }}">Editar</a>
+                </div>
+                
             </div>
+            
+            
 
-
-            <a href="{{ route('albums.create') }}">Criar</a>
-            <a href="{{ route('tracks.create', ['albumId' => $album->id]) }}">Criar nova Faixa</a>
         </div>
 
     </div>

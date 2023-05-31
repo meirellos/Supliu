@@ -40,23 +40,11 @@
                 @foreach ($albums as $album)
                     <div class="album-item">
                         <p>Álbum: {{ $album->name }}, {{ $album->date }}</p>
-
-                        <form action="{{ route('albums.destroy', $album->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Excluir Álbum</button>
-                        </form>
-
+                        <p>Faixas do album:</p>
                         <div class="album-item-faixa">
                             @foreach ($album->tracks as $track)
                                 Faixa: {{ $track->name }}
                                 Nº: {{ $track->id }}
-                                <form action="{{ route('tracks.destroy', $track->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Excluir</button>
-                                </form>
-                                </br>
                             @endforeach
                         </div>
                     </div>
