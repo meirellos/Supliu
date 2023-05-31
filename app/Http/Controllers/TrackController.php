@@ -9,12 +9,7 @@ use App\Models\Track;
 class TrackController extends Controller
 {
 
-    public function index(Album $album)
-    {
-        //
-        return view('tracks.index');
-    }
-
+    //Procurando as faixas.
     public function search(Request $request){
         $trackName = $request->input('name');
         $tracks = Track::with('album')->where('name', 'like', "%$trackName%")->get();
@@ -22,6 +17,7 @@ class TrackController extends Controller
     }
 
 
+    //Criando uma faixa pelo id do album.
     public function create($albumId)
     {
         //Criando nova faixa.
@@ -30,19 +26,18 @@ class TrackController extends Controller
         return view('tracks.create', compact('album'));
     }
 
-
+    //Salvando a faixa
     public function store(Request $request, Album $album, $albumId)
     {
-        //Salvando a faixa
-
+        //Validação de dados.
     $request->validate([
         'name' => 'required',
     ]);
 
+    //Criando a faixa.
     $track = new Track([
         'name' => $request->input('name'),
-        'duration' => $request->input('duration'),
-        // Outros campos da faixa
+        'duration' => $request->input('duration')
     ]);
 
     //Encontrar album pelo ID
@@ -51,28 +46,11 @@ class TrackController extends Controller
     //Salvar a faixa no Album
     $album->tracks()->save($track);
 
-    // Redirecionar ou retornar uma resposta de sucesso
+    //Redirecionar para a edição de albuns.
     return redirect()->route('albums.edit');
     }
 
-
-    public function show($id)
-    {
-        //
-    }
-
-
-    public function edit($id)
-    {
-        //
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
+    //Excluindo uma faixa.
     public function destroy(Album $album, Track $track, $id)
     {
         $track = Track::findOrFail($id);

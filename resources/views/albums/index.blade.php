@@ -18,7 +18,6 @@
 
 <body>
 
-
     <div class="container">
         <div class="box">
             <div class="box-title">
@@ -36,25 +35,17 @@
                     </div>
                 </form>
 
-
-
-
                 <div class="albums">
                     @foreach ($albums as $album)
                         <div class="album-title">
                             <p><strong>Álbum: {{ $album->name }}, {{ $album->date }}</strong></p>
                         </div>
-                        <!-- <form action="{{ route('albums.destroy', $album->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit">Excluir Álbum</button>
-                            </form>  -->
 
                         <div class="album-content">
 
                             <table>
                                 <thead>
-                                    <tr class="">
+                                    <tr>
                                         <th class="trackNumber">Nº</th>
                                         <th class="trackName">Faixa</th>
                                         <th class="trackDuration">Duração</th>
@@ -72,13 +63,6 @@
                                 @endforeach
                             </table>
 
-
-                            <!--  <form action="{{ route('tracks.destroy', $track->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit">Excluir</button>
-                                    </form> -->
-
                         </div>
                     @endforeach
                 </div>
@@ -87,11 +71,7 @@
                 </div>
                 
             </div>
-            
-            
-
         </div>
-
     </div>
     </div>
     </div>

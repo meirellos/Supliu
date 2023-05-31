@@ -41,9 +41,6 @@
 
     </div>
 
-
-    </div>
-
     <div class="container">
 
 
@@ -68,6 +65,8 @@
                         <button type="submit">Procurar</button>
                     </div>
                 </form>
+
+                
 
                 <div class="albums">
                     @foreach ($albums as $album)
@@ -128,19 +127,20 @@
 
                                 </table>
 
-                                <button type="submit"><a
+                                <button type="submit" class="add-track"><a
                                         href="{{ route('tracks.create', ['albumId' => $album->id]) }}">Criar nova
                                         Faixa</a></button>
-
-
-
-                            </div>
+                                          </div>
                         </div>
                     @endforeach
-                    <a href="{{ route('albums.edit') }}">Editar</a>
-                    <a href="{{ route('albums.create') }}">Criar</a>
+                    
+                    
 
                 </div>
+                <div class="footer"><button type="submit" class="footer-button"><a href="{{ route('albums') }}">Voltar</a></button>
+                    <button type="submit" class="footer-button"><a href="{{ route('albums.create') }}">Criar Album</a></button>
+                     </div>
+                         
             </div>
 
         </div>

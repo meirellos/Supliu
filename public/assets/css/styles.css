@@ -42,7 +42,7 @@ th.trackDuration{
 }
 
 .box .content {
-    height: 550px;
+    height: auto;
     padding: 25px;
     border-radius: 0 0 6px 6px;
 }

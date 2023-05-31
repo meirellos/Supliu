@@ -51,7 +51,6 @@
                 @endforeach
             </div>
 
-            <a href="{{ route('albums.create') }}">Criar</a>
             <a href="{{ route('albums') }}">Voltar para a Listagem</a>
         </div>
     </div>

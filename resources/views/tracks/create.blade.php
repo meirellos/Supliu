@@ -31,8 +31,6 @@
 
                         <label for="duration">Duração*</label>
                         <input type="text" name="duration" id="duration"  required>
-
-                        <!-- Outros campos da faixa -->
                         <button type="submit" class="btn btn-primary">Adicionar Faixa</button>
                     </form>
 

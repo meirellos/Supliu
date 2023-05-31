@@ -8,33 +8,25 @@ use App\Models\Track;
 
 class AlbumController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
+    
     //Exibir todos os albuns e faixas:
     public function index()
     {
-
         $albums = Album::with('tracks')->get();
         return view('albums.index', compact('albums'));
     }
 
     //Procurar todos os albums pelo nome
-
     public function search(Request $request){
+        //Pesquisando pelo input name
         $albumName = $request->input('name');
+
+        //Albums com faixas, onde o nome do album é igual ao input.
         $albums = Album::with('tracks')->where('name', 'like', "%$albumName%")->get();
+
+        //Retornando para a view search
         return view('albums.search', compact('albums'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     //Criando um novo album
     public function create()
@@ -43,21 +35,9 @@ class AlbumController extends Controller
         return view('albums.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-
     //Salvar o album novo.
     public function store(Request $request)
     {
-
-        /* Album::create($request->all());
-        return redirect()->route('albums')->with('success', 'Produto adicionado com sucesso!');*/
-
-
         //Validação dos dados
         $request->validate([
             'name' => 'required|string',
@@ -73,65 +53,38 @@ class AlbumController extends Controller
         //Salvando o album no bd
         $album->save();
 
-        return redirect()->route('albums.edit')->with('success', 'Album adicionado com sucesso!');
+        //Redirecionando para a edição de albums
+        return redirect()->route('albums.edit');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    //Mostrando os albums.
     public function show(Album $album)
     {
-        //
+        
         return view('albums.show', compact('album'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    //Editando os albums.
     public function edit()
     {
-        //
         $albums = Album::with('tracks')->get();
         return view('albums.edit', compact('albums'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    //Atualizar um album caso necessário.
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    //Excluir um Album
     public function destroy($id)
     {
-        //Excluir um Album
-        /* $album = Album::findOrFail($id);
-
-        $album->delete();
-
-        return redirect()->route('albums')->with('success', 'Álbum excluído com sucesso!');
-    */
+        //Se achar o id, delete.
         $album = Album::findOrFail($id);
         $album->tracks()->delete();
         $album->delete();
 
-        return redirect()->route('albums.edit')->with('success', 'Album excluido com sucesso!');
+        return redirect()->route('albums.edit');
     }
 }

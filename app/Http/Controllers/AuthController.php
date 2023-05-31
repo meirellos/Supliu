@@ -11,7 +11,6 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
-
     public function register()
     {
         return view('auth/register');
@@ -49,6 +48,7 @@ class AuthController extends Controller
             'password' => 'required'
         ])->validate();
 
+        //Se for diferente do usuario registrado, retorne um erro.
         if(!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))){
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed')
@@ -60,15 +60,14 @@ class AuthController extends Controller
         return redirect()->route('albums.edit')->with('success', 'Logado com sucesso!');
     }
 
+    //Deslogando
     public function logout(Request $request)
     {
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
-        return redirect('/')->with('success', 'Deslogado com sucesso!');
-    }
-    public function profile(){
-        //return view('profile');
+        //Redirecionando para o painel.
+        return redirect('/');
     }
 }
