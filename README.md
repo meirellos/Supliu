@@ -6,9 +6,8 @@ Laravel 9.5.2 <br/>
 MySQL <br/>
 HTML5 + CSS <br/>
 Bootstrap <br/>
-
-
-Utilizado blade para criação das pages, controllers, models, validations e migrations.
+Utilizado Modelo MVC (Model - View - Controller)
+Utilizado blade para criação das pages, validations e migrations.
 
 Para acessar a lista de albums, na primeira página selecione a opção: Acessar Painel.
 ![image](https://github.com/meirellos/Supliu/assets/72823459/5a70b970-8ae4-4504-9049-01950e3fc846)
